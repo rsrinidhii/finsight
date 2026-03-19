@@ -1,0 +1,116 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #0f0f0f;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  color: #4f9eff;
+  letter-spacing: 2px;
+}
+
+header p {
+  color: #888;
+  margin-top: 6px;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.controls input, .controls select {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #1a1a1a;
+  color: #e0e0e0;
+  font-size: 15px;
+  width: 160px;
+}
+
+.controls button {
+  padding: 10px 28px;
+  border-radius: 8px;
+  border: none;
+  background: #4f9eff;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.controls button:hover { background: #2d7dd2; }
+.controls button:disabled { background: #333; cursor: not-allowed; }
+
+.error { color: #ff4f4f; text-align: center; margin-bottom: 16px; }
+
+.summary-cards {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 20px 32px;
+  text-align: center;
+  min-width: 140px;
+}
+
+.card h3 { font-size: 1.8rem; color: #4f9eff; }
+.card p { color: #888; margin-top: 4px; font-size: 13px; }
+.card.anomaly h3 { color: #ff4f4f; }
+.card.high-risk h3 { color: #ff4f4f; }
+.card.low-risk h3 { color: #4caf50; }
+
+.chart-container {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.chart-container h2 {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 16px;
+}
+
+.anomaly-table {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.anomaly-table h2 { font-size: 1.1rem; color: #ccc; margin-bottom: 16px; }
+
+table { width: 100%; border-collapse: collapse; }
+th { background: #222; padding: 12px; text-align: left; color: #888; font-size: 13px; }
+td { padding: 12px; border-top: 1px solid #2a2a2a; font-size: 14px; }
+tr:hover td { background: #1f1f1f; }
