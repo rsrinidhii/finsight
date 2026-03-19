@@ -8,7 +8,11 @@ def detect_anomalies(df):
     df["returns"] = df["close"].pct_change()
     df["volatility"] = df["returns"].rolling(5).std()
     df["volume_change"] = df["volume"].pct_change()
+
+    # Fix for Indian stocks — replace inf and drop NaN
+    df.replace([np.inf, -np.inf], np.nan, inplace=True)
     df.dropna(inplace=True)
+    df.reset_index(drop=True, inplace=True)
 
     features = df[["returns", "volatility", "volume_change"]].values
     scaler = StandardScaler()
@@ -19,6 +23,6 @@ def detect_anomalies(df):
     scores = model.decision_function(features_scaled)
 
     df["is_anomaly"] = (preds == -1).astype(int)
-    df["anomaly_score"] = -scores  # higher = more anomalous
+    df["anomaly_score"] = -scores
 
     return df
