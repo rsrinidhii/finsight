@@ -71,6 +71,35 @@ def summary(ticker):
         "anomalies_detected": anomalies,
         "risk_score": risk_score
     })
+@app.route("/api/compare", methods=["POST"])
+def compare():
+    data = request.json
+    tickers = data.get("tickers", ["AAPL", "TSLA", "GOOGL"])
+    period = data.get("period", "6mo")
 
+    result = {}
+    for ticker in tickers:
+        ticker = ticker.upper().strip()
+        stock = yf.Ticker(ticker)
+        hist = stock.history(period=period)
+        if hist.empty:
+            continue
+        hist.reset_index(inplace=True)
+        hist.columns = [c.lower() for c in hist.columns]
+        hist = hist[["date", "open", "high", "low", "close", "volume"]]
+        df = detect_anomalies(hist)
+        total = len(df)
+        anomalies = int(df["is_anomaly"].sum())
+        result[ticker] = {
+            "risk_score": round((anomalies / total) * 100, 2),
+            "anomalies": anomalies,
+            "total": total,
+            "latest_close": round(float(df["close"].iloc[-1]), 2),
+            "price_change_pct": round(float(
+                (df["close"].iloc[-1] - df["close"].iloc[0]) / df["close"].iloc[0] * 100
+            ), 2)
+        }
+    return jsonify(result)
+    
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
