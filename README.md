@@ -67,8 +67,5 @@ curl -X POST http://localhost:5000/api/analyze \
   -d '{"ticker": "AAPL", "period": "6mo"}'
 ```
 
-## Resume line
-> Built FinSight, a full-stack stock anomaly detection system using Isolation Forest ML model (Python/Flask) and React dashboard. Detects statistically significant price movements across any publicly traded stock using unsupervised learning on OHLCV financial data.
-
 ## Author
 Ranga Srinidhi — [LinkedIn](https://www.linkedin.com/in/srinidhiranga/) · [GitHub](https://github.com/rsrinidhii)
