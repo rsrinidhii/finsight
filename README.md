@@ -1,6 +1,7 @@
 # FinSight — Stock Anomaly Detector
 
 > Real-time stock market anomaly detection using Machine Learning, built with Flask + React.
+> Live at https://finsight-gamma-eight.vercel.app/
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue)
 ![React](https://img.shields.io/badge/React-18-61DAFB)
@@ -8,7 +9,7 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ## What it does
-FinSight fetches real-time stock data and uses an **Isolation Forest ML model** to detect anomalous price movements — the kind of signals that precede market events, earnings surprises, or unusual trading activity.
+FinSight fetches real-time stock data and uses an **Isolation Forest ML model** to detect anomalous price movements,the kind of signals that precede market events, earnings surprises, or unusual trading activity.
 
 This is the same class of problem that quantitative teams at firms like JPMorgan and Goldman Sachs solve at scale.
 
