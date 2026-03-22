@@ -7,8 +7,11 @@ from ml_model import detect_anomalies
 import datetime
 
 app = Flask(__name__)
-CORS(app, origins=["*"])
-
+CORS(app, origins=[
+    "http://localhost:5173",
+    "http://localhost:8080",
+    "https://finsight-gamma-eight.vercel.app"
+])
 @app.route("/api/analyze", methods=["POST"])
 def analyze():
     data = request.json
