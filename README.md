@@ -1,7 +1,8 @@
 # FinSight — Stock Anomaly Detector
 
 > Real-time stock market anomaly detection using Machine Learning, built with Flask + React.
-> Live at https://finsight-gamma-eight.vercel.app/
+
+*Live at https://finsight-gamma-eight.vercel.app/*
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue)
 ![React](https://img.shields.io/badge/React-18-61DAFB)
