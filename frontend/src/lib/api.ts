@@ -1,4 +1,4 @@
-const API = import.meta.env.VITE_API_URL || "http://127.0.0.1:5000";
+const API = "https://finsight-backend-ch69.onrender.com";
 
 export const analyzeTicker = async (ticker: string, period: string) => {
   const res = await fetch(`${API}/api/analyze`, {
